@@ -18,7 +18,7 @@ $(document).ready(function(){
         crystal4 = Math.floor(Math.random()*13);
         goal = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
         score = 0;
-        $("#number-to-guess").text(goal)
+        $("#number-to-guess").text("your number to match is: " + goal)
     }
     
     function check(){
@@ -29,14 +29,14 @@ $(document).ready(function(){
         else if (score === goal){
             alert("YOU WON!");
             win++;
-            $("#winLoss").text(win+ "-"+ lose);
+            $("#winLoss").text("Record: " + win+ "-"+ lose);
             reset();
         }
     
         else if (score > goal){
             alert("You lose!");
             lose++;
-            $("#winLoss").text(win+ "-" +lose);
+            $("#winLoss").text("Record: " + win+ "-" +lose);
             reset();
         }
     }
@@ -48,7 +48,7 @@ $(document).ready(function(){
     console.log(crystal4);
     console.log("goal: "+ goal);
     
-    $("#number-to-guess").text(goal)
+    $("#number-to-guess").text("your number to match is: " + goal)
     
     $('body').on('click','#crystal1',function(){
         score += crystal1
