@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    // Variables for crystal values
+    // crystal values
     var crystal1 = Math.floor(Math.random()*13);
     var crystal2 = Math.floor(Math.random()*13);
     var crystal3 = Math.floor(Math.random()*13);
@@ -8,7 +8,7 @@ $(document).ready(function(){
     var win = 0;
     var lose = 0;
     
-    // Variable for desired value
+    // goal number
     var goal = Math.floor(Math.random() * (120 - 19 + 1)) + 19;
     
     function reset(){
@@ -23,7 +23,7 @@ $(document).ready(function(){
     
     function check(){
         if (score < goal){
-            console.log("try again")
+            console.log("keep going")
         }
     
         else if (score === goal){
@@ -34,46 +34,46 @@ $(document).ready(function(){
         }
     
         else if (score > goal){
-            alert("You lose :/");
+            alert("You lose!");
             lose++;
             $("#winLoss").text(win+ "-" +lose);
             reset();
         }
     }
     
-    //Checks
+    //Crystal consoles
     console.log(crystal1);
     console.log(crystal2);
     console.log(crystal3);
     console.log(crystal4);
     console.log("goal: "+ goal);
     
-    $("#goalValue").text(goal)
+    $("#number-to-guess").text(goal)
     
     $('body').on('click','#crystal1',function(){
         score += crystal1
-        $("#scoreValue").text(score)
+        $("#score").text(score)
         console.log("score: " + score)
         check();
     })
     
     $('body').on('click','#crystal2',function(){
         score += crystal2
-        $("#scoreValue").text(score)
+        $("#score").text(score)
         console.log("score: " + score)
         check();
     })
     
     $('body').on('click','#crystal3',function(){
         score += crystal3
-        $("#scoreValue").text(score)
+        $("#score").text(score)
         console.log("score: " + score)
         check();
     })
     
     $('body').on('click','#crystal4',function(){
         score += crystal4
-        $("#scoreValue").text(score)
+        $("#score").text(score)
         console.log("score: " + score)
         check();
     })
